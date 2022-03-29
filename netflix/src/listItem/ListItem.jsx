@@ -2,6 +2,8 @@ import './listItem.scss'
 
 export const ListItem = () => {
   return (
-    <div>ListItem</div>
+    <div className='listItem'>
+        item
+    </div>
   )
 }
