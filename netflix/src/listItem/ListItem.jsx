@@ -10,7 +10,7 @@ import { useState } from "react";
 export const ListItem = ({ index }) => {
   const [isHovered, setIsHovered] = useState(false);
   const trailer =
-    "https://player.vimeo.com/external/243924757.hd.mp4?s=1fc7fe8bd116cdd9c9c3e639ddbae75f2f4f8f2e&profile_id=174";
+    "https://player.vimeo.com/video/253989945?h=c6db007fe5&color=ef0800&title=0&byline=0&portrait=0";
   return (
     <div
       className="listItem"
