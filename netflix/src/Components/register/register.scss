@@ -53,7 +53,9 @@
     }
     p {
       font-size: 20px;
-      width: 30%;
+    }
+    span {
+      width: 40%;
     }
     .input {
       width: 100%;
@@ -66,7 +68,7 @@
       border-radius: 5px;
 
       input {
-        flex: 9;
+        flex: 11;
         height: 100%;
         border: none;
         padding: 0 10%;

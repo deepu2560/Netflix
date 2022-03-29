@@ -33,7 +33,7 @@ export const Register = () => {
           Ready to watch? Enter your email to create or restart your membership
         </p>
 
-        <p>
+        <span>
           {!email ? (
             <div className="input">
               <input type="email" placeholder="email address" ref={emailRef} />
@@ -49,7 +49,7 @@ export const Register = () => {
               </button>
             </div>
           )}
-        </p>
+        </span>
       </div>
     </div>
   );
