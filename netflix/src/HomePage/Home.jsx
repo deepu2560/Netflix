@@ -12,6 +12,11 @@ const Home = () => {
         
         <Featured type='movies' />
         <List/>
+        <List/>
+        <List/>
+        <List/>
+        <List/>
+        <List/>
       
 
     </div>
