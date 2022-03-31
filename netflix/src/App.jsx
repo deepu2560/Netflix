@@ -1,14 +1,10 @@
 import "./app.scss";
 import { Login } from "./Components/login/Login";
 import { Register } from "./Components/register/Register";
-import {
-  BrowserRouter as Router,
-  Route,
-  Navigate,
-  Routes,
-} from "react-router-dom";
+import { Route, Navigate, Routes } from "react-router-dom";
 
 import Home from "./HomePage/Home";
+import Watch from "./Watch/Watch";
 
 function App() {
   let user = true;
@@ -41,9 +37,7 @@ function App() {
               user ? <Home type="series" /> : <Navigate to="/register" />
             }
           ></Route>
-          {/* <Route path="/watch">
-              <Watch />
-            </Route> */}
+          <Route path="/watch" element={<Watch />}></Route>
         </>
       }
     </Routes>

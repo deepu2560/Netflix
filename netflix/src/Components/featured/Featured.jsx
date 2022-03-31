@@ -1,7 +1,27 @@
 import { InfoOutlined, PlayArrow } from "@material-ui/icons";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import "./featured.scss";
 
 const Featured = ({ type }) => {
+  const [content, setContent] = useState({});
+
+  useEffect(() => {
+    const getRandomContent = async () => {
+      try {
+        const res = await axios.get(`/movies/random?type=${type}`, {
+          headers: {
+            token:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDVkY2QyODBhYWIwMDgyOTM0NjJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0ODc0NTczNywiZXhwIjoxNjQ5MTc3NzM3fQ._mdvS_JCjzzQpOhyl_Jud2JLTxTgtaCN4X8PoZwG-4Q",
+          },
+        });
+        setContent(res.data[0]);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getRandomContent();
+  }, [type]);
   return (
     <div className="featured">
       {type && (
@@ -23,22 +43,10 @@ const Featured = ({ type }) => {
           </select>
         </div>
       )}
-      <img
-        src="https://wallpapercave.com/wp/pJhlkBc.jpg"
-        width={"100%"}
-        alt="movie"
-      />
+      <img src={content.img} width={"100%"} alt="movie" />
       <div className="info">
-        <img
-          src="https://seeklogo.com/images/B/batman-logo-67F6E4934C-seeklogo.com.png"
-          alt=""
-        />
-        <span className="desc">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolor
-          sequi delectus perferendis blanditiis atque non vitae cumque
-          consequatur recusandae quis incidunt, quod ipsum in aspernatur,
-          officia ullam quidem consequuntur!
-        </span>
+        <img src={content.imgTitle} alt="" />
+        <span className="desc">{content.desc}</span>
         <div className="buttons">
           <button className="play">
             <PlayArrow />

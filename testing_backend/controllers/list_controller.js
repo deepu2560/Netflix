@@ -63,9 +63,9 @@ router.get("/", verify, async (req, res) => {
     } else {
       list = await List.aggregate([{ $sample: { size: 10 } }]);
     }
-    res.status(200).json(list);
+    return res.status(200).send(list);
   } catch (err) {
-    res.status(500).json(err);
+    return res.status(500).send(err.message);
   }
 });
 

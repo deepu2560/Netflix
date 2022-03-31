@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
+var cors = require("cors");
+
+app.use(cors());
 const connect = require("./configs/db");
 const dotenv = require("dotenv");
 const authRout = require("./controllers/auth");
