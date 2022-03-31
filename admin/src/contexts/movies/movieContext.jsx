@@ -1,23 +1,24 @@
-import MovieRducer from "./movieReducer";
+import MovieReducer from "./movieReducer";
 import { createContext, useReducer } from "react";
 
 const INITIAL_STATE = {
   movies: [],
-  isFatching: false,
+  isFetching: false,
   error: false,
 };
 
 export const MovieContext = createContext(INITIAL_STATE);
 
 export const MovieContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(MovieRducer, INITIAL_STATE);
+  const [state, dispatch] = useReducer(MovieReducer, INITIAL_STATE);
 
   return (
     <MovieContext.Provider
       value={{
         movies: state.movies,
-        isFatching: state.isFatching,
+        isFetching: state.isFetching,
         error: state.error,
+        dispatch,
       }}
     >
       {children}
