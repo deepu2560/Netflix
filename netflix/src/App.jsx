@@ -3,40 +3,40 @@ import { Login } from "./Components/login/Login";
 import { Register } from "./Components/register/Register";
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Redirect,
+  Navigate,
+  Routes,
 } from "react-router-dom";
-import { useContext } from "react";
+
 import Home from "./HomePage/Home";
 
 function App() {
   let user = false;
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          {user ? <Home /> : <Redirect to="/register" />}
-        </Route>
-        <Route path="/register">
-          {!user ? <Register /> : <Redirect to="/" />}
-        </Route>
-        <Route path="/login">{!user ? <Login /> : <Redirect to="/" />}</Route>
-        {user && (
-          <>
-            <Route path="/movies">
-              <Home type="movie" />
-            </Route>
-            <Route path="/series">
-              <Home type="series" />
-            </Route>
-            <Route path="/watch">
+    <Routes>
+      <Route
+        exact
+        path="/"
+        element={user ? <Home /> : <Navigate to="/register" />}
+      ></Route>
+      <Route
+        path="/register"
+        element={!user ? <Register /> : <Navigate to="/" />}
+      ></Route>
+      <Route
+        path="/login"
+        element={!user ? <Login /> : <Navigate to="/" />}
+      ></Route>
+      {user && (
+        <>
+          <Route path="/movies" element={<Home type="movie" />}></Route>
+          <Route path="/series" element={<Home type="series" />}></Route>
+          {/* <Route path="/watch">
               <Watch />
-            </Route>
-          </>
-        )}
-      </Switch>
-    </Router>
+            </Route> */}
+        </>
+      )}
+    </Routes>
   );
 }
 
