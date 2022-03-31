@@ -11,7 +11,7 @@ import {
 import Home from "./HomePage/Home";
 
 function App() {
-  let user = false;
+  let user = true;
   return (
     <Routes>
       <Route
@@ -27,15 +27,25 @@ function App() {
         path="/login"
         element={!user ? <Login /> : <Navigate to="/" />}
       ></Route>
-      {user && (
+      {
         <>
-          <Route path="/movies" element={<Home type="movie" />}></Route>
-          <Route path="/series" element={<Home type="series" />}></Route>
+          <Route
+            path="/movies"
+            element={
+              user ? <Home type="movies" /> : <Navigate to="/register" />
+            }
+          ></Route>
+          <Route
+            path="/series"
+            element={
+              user ? <Home type="series" /> : <Navigate to="/register" />
+            }
+          ></Route>
           {/* <Route path="/watch">
               <Watch />
             </Route> */}
         </>
-      )}
+      }
     </Routes>
   );
 }
