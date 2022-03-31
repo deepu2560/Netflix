@@ -1,45 +1,50 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import Sidebar from "./components/sidebar/Sidebar";
+import Topbar from "./components/topbar/Topbar";
+import "./App.css";
+import Home from "./pages/home/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import UserList from "./pages/userList/UserList";
+import User from "./pages/user/User";
+import NewUser from "./pages/newUser/NewUser";
+import ProductList from "./pages/productList/ProductList";
+import Product from "./pages/product/Product";
+import NewProduct from "./pages/newProduct/NewProduct";
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
+  const [userstats, setuserstats] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+    <Router>
+      <Topbar />
+      <div className="container">
+        <Sidebar />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/users" element={<UserList />} />
+          <Route exact path="/user/:userId" element={<User />} />
+          <Route exact path="/newUser" element={<NewUser />} />
+          <Route exact path="/products" element={<ProductList />} />
+          <Route exact path="/product/:productId" element={<Product />} />
+          <Route exact path="/newproduct" element={<NewProduct />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
