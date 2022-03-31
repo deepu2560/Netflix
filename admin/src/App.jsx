@@ -9,35 +9,9 @@ import NewUser from "./pages/newUser/NewUser";
 import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { ListItem } from "@material-ui/core";
 
 function App() {
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-
-  const [userstats, setuserstats] = useState([]);
-
-  useEffect(() => {
-    const getStats = async () => {
-      axios.get("URL").then((res) => {
-        getStats(res.data);
-      });
-    };
-  }, []);
-
   return (
     <Router>
       <Topbar />

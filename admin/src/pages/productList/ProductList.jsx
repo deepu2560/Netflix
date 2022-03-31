@@ -1,15 +1,29 @@
 import "./productList.css";
 import { DataGrid } from "@material-ui/data-grid";
 import { DeleteOutline } from "@material-ui/icons";
-import { productRows } from "../../dummyData";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function ProductList() {
-  const [data, setData] = useState(productRows);
+  const [productRows, setproductRows] = useState([]);
+
+  useEffect(() => {
+    const gettingMovies = async () => {
+      try {
+        await axios.get("http://localhost:8080/productRows ").then((res) => {
+          console.log(res.data);
+          setproductRows(res.data);
+        });
+      } catch (error) {
+        console.log("Error:" + error);
+      }
+    };
+    console.log(productRows);
+  }, []);
 
   const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
+    setData(productRows.filter((item) => item.id !== id));
   };
 
   const columns = [
@@ -61,7 +75,7 @@ export default function ProductList() {
   return (
     <div className="productList">
       <DataGrid
-        rows={data}
+        rows={productRows}
         disableSelectionOnClick
         columns={columns}
         pageSize={8}
