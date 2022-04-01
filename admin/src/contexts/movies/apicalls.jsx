@@ -36,7 +36,7 @@ export const createMovie = async (movie, dispatch) => {
 };
 
 //update
-export const update = async (id, movie, dispatch) => {
+export const updatemovie = async (id, movie, dispatch) => {
   dispatch(updateMovieStart());
   try {
     const res = await axios.put("http://localhost:8080/movies" + id, movie);

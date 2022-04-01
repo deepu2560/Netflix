@@ -45,7 +45,7 @@ export default function MovieList() {
         return (
           <>
             <Link
-              to={{ pathname: "/movie/" + params.row.id, movie: params.row }}
+              to={{ pathname: "/product/" + params.row.id, movie: params.row }}
             >
               <button className="productListEdit">Edit</button>
             </Link>
