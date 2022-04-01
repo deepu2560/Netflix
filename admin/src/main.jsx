@@ -3,11 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { MovieContextProvider } from "./contexts/movies/movieContext";
+import { ListContextProvider } from "./contexts/Listlist/listContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <MovieContextProvider>
-      <App />
+      <ListContextProvider>
+        <App />
+      </ListContextProvider>
     </MovieContextProvider>
   </React.StrictMode>,
   document.getElementById("root"),

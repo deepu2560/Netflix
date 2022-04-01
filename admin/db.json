@@ -33,172 +33,33 @@
       "_id": 6
     }
   ],
-
-  "movies": [],
-
-  "userRows": [
+  "movies": [
     {
-      "id": 1,
-      "username": "Jon Snow",
-      "avatar": "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "email": "jon@gmail.com",
-      "status": "active",
-      "transaction": "$120.00"
+      "title": "adsfa",
+      "desc": "asdfasd",
+      "year": "3224",
+      "genre": "asdfasfd",
+      "duration": "sdafasdf",
+      "limit": "dfasdf",
+      "isSeries": "true",
+      "imgSm": "https://firebasestorage.googleapis.com/v0/b/netflixclone-cb790.appspot.com/o/items%2F1648791641697imgSmforestessentialindia.jpeg?alt=media&token=84c3badb-bf24-4eb0-b75c-c9e93ef1f07b",
+      "imgTitle": "https://firebasestorage.googleapis.com/v0/b/netflixclone-cb790.appspot.com/o/items%2F1648791641696imgTitlenike.jpg?alt=media&token=a252b7b6-8727-4f2d-a990-4822e41c3d52",
+      "video": "https://firebasestorage.googleapis.com/v0/b/netflixclone-cb790.appspot.com/o/items%2F1648791641698videomyPhoto.png?alt=media&token=a0f0a51c-f8bc-4df8-a812-c33edec6b23d",
+      "img": "https://firebasestorage.googleapis.com/v0/b/netflixclone-cb790.appspot.com/o/items%2F1648791641694imgmyPhoto.png?alt=media&token=94dea7ba-a37b-4ed5-aef8-cd474e0ea0c3",
+      "trailer": "https://firebasestorage.googleapis.com/v0/b/netflixclone-cb790.appspot.com/o/items%2F1648791641698trailermyPhoto.png?alt=media&token=3ac9966c-08ef-4bec-af7f-6068739559da",
+      "id": 2
     },
     {
-      "id": 2,
-      "username": "Jon Snow",
-      "avatar": "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "email": "jon@gmail.com",
-      "status": "active",
-      "transaction": "$120.00"
+      "id": 3
     },
     {
-      "id": 3,
-      "username": "Jon Snow",
-      "avatar": "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "email": "jon@gmail.com",
-      "status": "active",
-      "transaction": "$120.00"
+      "id": 4
     },
     {
-      "id": 4,
-      "username": "Jon Snow",
-      "avatar": "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "email": "jon@gmail.com",
-      "status": "active",
-      "transaction": "$120.00"
+      "id": 5
     },
     {
-      "id": 5,
-      "username": "Jon Snow",
-      "avatar": "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "email": "jon@gmail.com",
-      "status": "active",
-      "transaction": "$120.00"
-    },
-    {
-      "id": 6,
-      "username": "Jon Snow",
-      "avatar": "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "email": "jon@gmail.com",
-      "status": "active",
-      "transaction": "$120.00"
-    },
-    {
-      "id": 7,
-      "username": "Jon Snow",
-      "avatar": "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "email": "jon@gmail.com",
-      "status": "active",
-      "transaction": "$120.00"
-    },
-    {
-      "id": 8,
-      "username": "Jon Snow",
-      "avatar": "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "email": "jon@gmail.com",
-      "status": "active",
-      "transaction": "$120.00"
-    },
-    {
-      "id": 9,
-      "username": "Jon Snow",
-      "avatar": "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "email": "jon@gmail.com",
-      "status": "active",
-      "transaction": "$120.00"
-    },
-    {
-      "id": 10,
-      "username": "Jon Snow",
-      "avatar": "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "email": "jon@gmail.com",
-      "status": "active",
-      "transaction": "$120.00"
-    }
-  ],
-
-  "productRows": [
-    {
-      "id": 1,
-      "name": "Apple Airpods",
-      "img": "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "stock": 123,
-      "status": "active",
-      "price": "$120.00"
-    },
-    {
-      "id": 2,
-      "name": "Apple Airpods",
-      "img": "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "stock": 123,
-      "status": "active",
-      "price": "$120.00"
-    },
-    {
-      "id": 3,
-      "name": "Apple Airpods",
-      "img": "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "stock": 123,
-      "status": "active",
-      "price": "$120.00"
-    },
-    {
-      "id": 4,
-      "name": "Apple Airpods",
-      "img": "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "stock": 123,
-      "status": "active",
-      "price": "$120.00"
-    },
-    {
-      "id": 5,
-      "name": "Apple Airpods",
-      "img": "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "stock": 123,
-      "status": "active",
-      "price": "$120.00"
-    },
-    {
-      "id": 6,
-      "name": "Apple Airpods",
-      "img": "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "stock": 123,
-      "status": "active",
-      "price": "$120.00"
-    },
-    {
-      "id": 7,
-      "name": "Apple Airpods",
-      "img": "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "stock": 123,
-      "status": "active",
-      "price": "$120.00"
-    },
-    {
-      "id": 8,
-      "name": "Apple Airpods",
-      "img": "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "stock": 123,
-      "status": "active",
-      "price": "$120.00"
-    },
-    {
-      "id": 9,
-      "name": "Apple Airpods",
-      "img": "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "stock": 123,
-      "status": "active",
-      "price": "$120.00"
-    },
-    {
-      "id": 10,
-      "name": "Apple Airpods",
-      "img": "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "stock": 123,
-      "status": "active",
-      "price": "$120.00"
+      "id": 6
     }
   ]
 }

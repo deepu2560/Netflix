@@ -3,6 +3,9 @@ import {
   createMovieFailure,
   createMovieStart,
   createMovieSuccess,
+  updateMovieStart,
+  updateMovieSuccess,
+  updateMovieFailure,
   deleteMovieFailure,
   deleteMovieStart,
   deleteMovieSuccess,
@@ -25,10 +28,21 @@ export const getMovies = async (dispatch) => {
 export const createMovie = async (movie, dispatch) => {
   dispatch(createMovieStart());
   try {
-    const res = await axios.post("http://localhost:8080/movies");
+    const res = await axios.post("http://localhost:8080/movies", movie);
     dispatch(createMovieSuccess(res.data));
   } catch (err) {
     dispatch(createMovieFailure());
+  }
+};
+
+//update
+export const update = async (id, movie, dispatch) => {
+  dispatch(updateMovieStart());
+  try {
+    const res = await axios.put("http://localhost:8080/movies" + id, movie);
+    dispatch(updateMovieSuccess(res.data));
+  } catch (err) {
+    dispatch(updateMovieFailure());
   }
 };
 

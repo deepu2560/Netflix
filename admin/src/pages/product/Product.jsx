@@ -1,85 +1,213 @@
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import "./product.css";
-import Chart from "../../components/chart/Chart";
-import { Publish } from "@material-ui/icons";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import storage from "../../firebase";
+import { createMovie, getMovies } from "../../contexts/movies/apicalls";
+import { MovieContext } from "../../contexts/movies/movieContext";
+import { ListContext } from "../../contexts/Listlist/listContext";
+import { useParams } from "react-router-dom";
+// import { updateList } from "../../contexts/Listlist/apiCalls";
 
-export default function Product() {
-  const productData = [];
+export default function NewList() {
+  const { productId } = useParams("id");
+
+  const [list, setList] = useState(null);
+
+  const [movie, setMovie] = useState(null);
+  const [img, setImg] = useState(null);
+  const [imgTitle, setImgTitle] = useState(null);
+  const [imgSm, setImgSm] = useState(null);
+  const [trailer, setTrailer] = useState(null);
+  const [video, setVideo] = useState(null);
+  const [uploaded, setUploaded] = useState(0);
+
+  const { dispatch } = useContext(ListContext);
+  const { movies, dispatch: dispatchMovie } = useContext(MovieContext);
+  const [moviedata, setMoviedata] = useState(null);
+
+  useEffect(() => {
+    getMovies(dispatchMovie);
+  }, [dispatchMovie]);
+
+  useEffect(() => {
+    movies.forEach((elem) => {
+      if (elem.id == +productId) {
+        setMoviedata(() => elem);
+      }
+    });
+    console.log(productId, moviedata);
+  }, []);
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setList({ ...list, [e.target.name]: value });
+  };
+
+  const handleSelect = (e) => {
+    let value = Array.from(e.target.selectedOptions, (option) => option.value);
+    setList({ ...list, [e.target.name]: value });
+  };
+
+  const upload = (items) => {
+    items.forEach((item) => {
+      const fileName = new Date().getTime() + item.label + item.file.name;
+      const uploadTask = storage.ref(`/items/${fileName}`).put(item.file);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log("Upload is " + progress + "% done");
+        },
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          uploadTask.snapshot.ref.getDownloadURL().then((url) => {
+            setMovie((prev) => {
+              return { ...prev, [item.label]: url };
+            });
+            setUploaded((prev) => prev + 1);
+          });
+        },
+      );
+    });
+  };
+
+  const handleUpload = (e) => {
+    e.preventDefault();
+    upload([
+      { file: img, label: "img" },
+      { file: imgTitle, label: "imgTitle" },
+      { file: imgSm, label: "imgSm" },
+      { file: trailer, label: "trailer" },
+      { file: video, label: "video" },
+    ]);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e);
+    // updateList(list, dispatch);
+  };
+
   return (
-    <div className="product">
-      <div className="productTitleContainer">
-        <h1 className="productTitle">Product</h1>
-        <Link to="/newproduct">
-          <button className="productAddButton">Create</button>
-        </Link>
-      </div>
-      <div className="productTop">
-        <div className="productTopLeft">
-          <Chart data={productData} dataKey="Sales" title="Sales Performance" />
+    <div className="newProduct">
+      <h1 className="addProductTitle">New List</h1>
+      <form className="addProductForm">
+        <div className="addProductItem">
+          <label>Image</label>
+          <input
+            type="file"
+            id="img"
+            name="img"
+            onChange={(e) => setImg(e.target.files[0])}
+          />
         </div>
-        <div className="productTopRight">
-          <div className="productInfoTop">
-            <img
-              src="https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt=""
-              className="productInfoImg"
-            />
-            <span className="productName">Apple Airpods</span>
-          </div>
-          <div className="productInfoBottom">
-            <div className="productInfoItem">
-              <span className="productInfoKey">id:</span>
-              <span className="productInfoValue">123</span>
-            </div>
-            <div className="productInfoItem">
-              <span className="productInfoKey">sales:</span>
-              <span className="productInfoValue">5123</span>
-            </div>
-            <div className="productInfoItem">
-              <span className="productInfoKey">active:</span>
-              <span className="productInfoValue">yes</span>
-            </div>
-            <div className="productInfoItem">
-              <span className="productInfoKey">in stock:</span>
-              <span className="productInfoValue">no</span>
-            </div>
-          </div>
+        <div className="addProductItem">
+          <label>Title image</label>
+          <input
+            type="file"
+            id="imgTitle"
+            name="imgTitle"
+            onChange={(e) => setImgTitle(e.target.files[0])}
+          />
         </div>
-      </div>
-      <div className="productBottom">
-        <form className="productForm">
-          <div className="productFormLeft">
-            <label>Product Name</label>
-            <input type="text" placeholder="Apple AirPod" />
-            <label>In Stock</label>
-            <select name="inStock" id="idStock">
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-            <label>Active</label>
-            <select name="active" id="active">
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-          </div>
-          <div className="productFormRight">
-            <div className="productUpload">
-              <img
-                src="https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt=""
-                className="productUploadImg"
-              />
-              <label for="file">
-                <Publish />
-              </label>
-              <input type="file" id="file" style={{ display: "none" }} />
-            </div>
-            <button className="productButton">Update</button>
-          </div>
-        </form>
-      </div>
+        <div className="addProductItem">
+          <label>Thumbnail image</label>
+          <input
+            type="file"
+            id="imgSm"
+            defaultValue={moviedata.imgSm}
+            placeholder={moviedata.imgSm}
+            name="imgSm"
+            onChange={(e) => setImgSm(e.target.files[0])}
+          />
+        </div>
+        <div className="addProductItem">
+          <label>Title</label>
+          <input
+            type="text"
+            defaultValue={moviedata.title}
+            placeholder={moviedata.title}
+            name="title"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="addProductItem">
+          <label>Description</label>
+          <input
+            type="text"
+            defaultValue={moviedata.desc}
+            placeholder={moviedata.desc}
+            name="desc"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="addProductItem">
+          <label>Year</label>
+          <input
+            type="number"
+            defaultValue={moviedata.year}
+            placeholder={moviedata.year}
+            name="year"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="addProductItem">
+          <label>Genre</label>
+          <input
+            type="text"
+            defaultValue={moviedata.genre}
+            placeholder={moviedata.genre}
+            name="genre"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="addProductItem">
+          <label>Duration</label>
+          <input
+            type="text"
+            defaultValue={moviedata.duration}
+            placeholder={moviedata.duration}
+            name="duration"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="addProductItem">
+          <label>Limit</label>
+          <input
+            type="text"
+            defaultValue={moviedata.limit}
+            placeholder={moviedata.limit}
+            name="limit"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="addProductItem">
+          <label>Trailer</label>
+          <input
+            type="file"
+            name="trailer"
+            onChange={(e) => setTrailer(e.target.files[0])}
+          />
+        </div>
+        <div className="addProductItem">
+          <label>Video</label>
+          <input
+            type="file"
+            name="video"
+            onChange={(e) => setVideo(e.target.files[0])}
+          />
+        </div>
+        {uploaded === 5 ? (
+          <button className="addProductButton" onClick={handleSubmit}>
+            Create
+          </button>
+        ) : (
+          <button className="addProductButton" onClick={handleUpload}>
+            Upload
+          </button>
+        )}
+      </form>
     </div>
   );
 }

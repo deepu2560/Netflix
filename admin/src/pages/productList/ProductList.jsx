@@ -18,7 +18,7 @@ export default function MovieList() {
   };
 
   const columns = [
-    { field: "_id", headerName: "ID", width: 90 },
+    { field: "id", headerName: "ID", width: 90 },
     {
       field: "movie",
       headerName: "Movie",
@@ -45,13 +45,13 @@ export default function MovieList() {
         return (
           <>
             <Link
-              to={{ pathname: "/movie/" + params.row._id, movie: params.row }}
+              to={{ pathname: "/movie/" + params.row.id, movie: params.row }}
             >
               <button className="productListEdit">Edit</button>
             </Link>
             <DeleteOutline
               className="productListDelete"
-              onClick={() => handleDelete(params.row._id)}
+              onClick={() => handleDelete(params.row.id)}
             />
           </>
         );
@@ -67,7 +67,7 @@ export default function MovieList() {
         columns={columns}
         pageSize={8}
         checkboxSelection
-        getRowId={(r) => r._id}
+        getRowId={(r) => r.id}
       />
     </div>
   );
