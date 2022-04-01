@@ -7,6 +7,8 @@ const authRout = require("./controllers/auth");
 const userRoute = require("./controllers/user_controller");
 const movieRoute = require("./controllers/movie_controller");
 const listRoute = require("./controllers/list_controller");
+const cors = require ("cors")
+app.use(cors())
 dotenv.config();
 
 app.use("/api/auth", authRout);
