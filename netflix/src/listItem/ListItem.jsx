@@ -42,7 +42,7 @@ export const ListItem = ({ index, item }) => {
       to={{
         pathname: "/watch",
         search: "?sort=name",
-        moviw: movie,
+        hash: movie.trailer,
         state: { fromDashboard: true },
       }}
     >

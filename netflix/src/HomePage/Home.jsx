@@ -24,7 +24,7 @@ const Home = ({ type }) => {
             },
           }
         );
-        console.log("home page");
+        // console.log("home page");
         setLists(res.data);
       } catch (err) {
         //console.log("backend", err);
@@ -39,7 +39,7 @@ const Home = ({ type }) => {
 
       <Featured type={type} setGenre={setGenre} />
       {lists.map((list) => {
-        console.log("appedning");
+        //console.log("appedning");
         return <List list={list} />;
       })}
     </div>

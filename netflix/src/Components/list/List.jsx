@@ -36,7 +36,7 @@ export const List = ({ list }) => {
         />
         <div className="container" ref={listRef}>
           {
-            (console.log("asdas"),
+            (console.log(""),
             list.content.map((item, i) => <ListItem index={i} item={item} />))
           }
         </div>
