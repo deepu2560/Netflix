@@ -114,7 +114,7 @@ export default function NewMovie() {
         <div className="addProductItem">
           <label>Year</label>
           <input
-            type="text"
+            type="number"
             placeholder="Year"
             name="year"
             onChange={handleChange}
