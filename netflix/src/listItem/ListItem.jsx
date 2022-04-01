@@ -26,7 +26,7 @@ export const ListItem = ({ index, item }) => {
             },
           }
         );
-        console.log(res.data);
+        //console.log(res.data);
         setMovie(res.data);
       } catch (err) {
         console.log("listItam failed", err);
@@ -42,7 +42,7 @@ export const ListItem = ({ index, item }) => {
       to={{
         pathname: "/watch",
         search: "?sort=name",
-        hash: "#the-hash",
+        moviw: movie,
         state: { fromDashboard: true },
       }}
     >
