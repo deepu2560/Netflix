@@ -7,14 +7,15 @@ import "firebase/compat/storage";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBLmqh9T4aBlC-JMOc5IunUtDH_o7fvz-M",
-  authDomain: "netflix-e6e31.firebaseapp.com",
-  projectId: "netflix-e6e31",
-  storageBucket: "netflix-e6e31.appspot.com",
-  messagingSenderId: "151204956945",
-  appId: "1:151204956945:web:7f6b89263012774af21ab0",
-  measurementId: "G-W05SZGXRNM"
+  apiKey: "AIzaSyAWC18tj3KnVUm5Sf9SCrrUuU9dn8hU4e4",
+  authDomain: "netflix-clone-e78b1.firebaseapp.com",
+  projectId: "netflix-clone-e78b1",
+  storageBucket: "netflix-clone-e78b1.appspot.com",
+  messagingSenderId: "222671643540",
+  appId: "1:222671643540:web:897d1cf091eeb2eaab2581",
+  measurementId: "G-GTY3F3L25B"
 };
+
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);

@@ -67,7 +67,7 @@ export default function MovieList() {
         columns={columns}
         pageSize={8}
         checkboxSelection
-        getRowId={(r) => r.id}
+        getRowId={(r) => r._id}
       />
     </div>
   );
