@@ -1,14 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import "./list.css";
-import Chart from "../../components/chart/Chart";
 import { Publish } from "@material-ui/icons";
-import { useEffect, useState } from "react";
-import axios from "axios";
 
 export default function List() {
   const location = useLocation();
+  console.log(location);
   const list = location.list;
-  const productData = [];
   return (
     <div className="product">
       <div className="productTitleContainer">
@@ -18,34 +15,22 @@ export default function List() {
         </Link>
       </div>
       <div className="productTop">
-        <div className="productTopLeft">
-          <Chart data={productData} dataKey="Sales" title="Sales Performance" />
-        </div>
         <div className="productTopRight">
           <div className="productInfoTop">
-            <img
-              src="https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt=""
-              className="productInfoImg"
-            />
-            <span className="productName">Apple Airpods</span>
+            <span className="productName">{list.title}</span>
           </div>
           <div className="productInfoBottom">
             <div className="productInfoItem">
               <span className="productInfoKey">id:</span>
-              <span className="productInfoValue">123</span>
+              <span className="productInfoValue">{list._id}</span>
             </div>
             <div className="productInfoItem">
-              <span className="productInfoKey">sales:</span>
-              <span className="productInfoValue">5123</span>
+              <span className="productInfoKey">genre:</span>
+              <span className="productInfoValue">{list.genre}</span>
             </div>
             <div className="productInfoItem">
-              <span className="productInfoKey">active:</span>
-              <span className="productInfoValue">yes</span>
-            </div>
-            <div className="productInfoItem">
-              <span className="productInfoKey">in stock:</span>
-              <span className="productInfoValue">no</span>
+              <span className="productInfoKey">type:</span>
+              <span className="productInfoValue">{list.type}</span>
             </div>
           </div>
         </div>
@@ -53,31 +38,14 @@ export default function List() {
       <div className="productBottom">
         <form className="productForm">
           <div className="productFormLeft">
-            <label>Product Name</label>
-            <input type="text" placeholder="Apple AirPod" />
-            <label>In Stock</label>
-            <select name="inStock" id="idStock">
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-            <label>Active</label>
-            <select name="active" id="active">
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
+            <label>List Title</label>
+            <input type="text" placeholder={list.title} />
+            <label>Type</label>
+            <input type="text" placeholder={list.type} />
+            <label>Genre</label>
+            <input type="text" placeholder={list.genre} />
           </div>
           <div className="productFormRight">
-            <div className="productUpload">
-              <img
-                src="https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt=""
-                className="productUploadImg"
-              />
-              <label for="file">
-                <Publish />
-              </label>
-              <input type="file" id="file" style={{ display: "none" }} />
-            </div>
             <button className="productButton">Update</button>
           </div>
         </form>

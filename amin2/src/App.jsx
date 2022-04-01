@@ -11,6 +11,8 @@ import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
 import { ListItem } from "@material-ui/core";
 import ListList from "./pages/listList/ListList";
+import List from "./pages/list/List";
+import NewList from "./pages/newList/NewList";
 
 function App() {
   return (
@@ -27,8 +29,8 @@ function App() {
           <Route exact path="/product/:productId" element={<Product />} />
           <Route exact path="/newproduct" element={<NewProduct />} />
           <Route exact path="/lists" element={<ListList />} />
-          {/* <Route exact path="/lists/:listId" element={<Product />} />
-          <Route exact path="/newList" element={<NewProduct />} /> */}
+          <Route exact path="/list/:listId" element={<List />} />
+          <Route exact path="/newList" element={<NewList />} />
         </Routes>
       </div>
     </Router>

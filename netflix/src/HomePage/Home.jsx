@@ -6,7 +6,7 @@ import { List } from "../Components/list/List";
 import { useEffect, useState } from "react";
 import axios from "axios";
 const Home = ({ type }) => {
-  console.log(type);
+  //console.log(type);
   const [lists, setLists] = useState([]);
   const [genre, setGenre] = useState(null);
 
@@ -24,10 +24,10 @@ const Home = ({ type }) => {
             },
           }
         );
-        //console.log(res);
+        console.log("home page");
         setLists(res.data);
       } catch (err) {
-        console.log("backend", err);
+        //console.log("backend", err);
       }
     };
 
@@ -37,10 +37,11 @@ const Home = ({ type }) => {
     <div className="home">
       <Navbar />
 
-      <Featured type={type} />
-      {lists.map((list) => (
-        <List list={list} />
-      ))}
+      <Featured type={type} setGenre={setGenre} />
+      {lists.map((list) => {
+        console.log("appedning");
+        return <List list={list} />;
+      })}
     </div>
   );
 };

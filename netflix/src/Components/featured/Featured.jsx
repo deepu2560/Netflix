@@ -3,18 +3,21 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./featured.scss";
 
-const Featured = ({ type }) => {
+const Featured = ({ type, setGenre }) => {
   const [content, setContent] = useState({});
 
   useEffect(() => {
     const getRandomContent = async () => {
       try {
-        const res = await axios.get(`/movies/random?type=${type}`, {
-          headers: {
-            token:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDVkY2QyODBhYWIwMDgyOTM0NjJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0ODc0NTczNywiZXhwIjoxNjQ5MTc3NzM3fQ._mdvS_JCjzzQpOhyl_Jud2JLTxTgtaCN4X8PoZwG-4Q",
-          },
-        });
+        const res = await axios.get(
+          `http://localhost:8080/api/movies/random?type=${type}`,
+          {
+            headers: {
+              token:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDVkY2QyODBhYWIwMDgyOTM0NjJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0ODc0NTczNywiZXhwIjoxNjQ5MTc3NzM3fQ._mdvS_JCjzzQpOhyl_Jud2JLTxTgtaCN4X8PoZwG-4Q",
+            },
+          }
+        );
         setContent(res.data[0]);
       } catch (err) {
         console.log(err);
@@ -27,7 +30,11 @@ const Featured = ({ type }) => {
       {type && (
         <div className="category">
           <span>{type === "movies" ? "Movies" : "Series"}</span>
-          <select name="genre" id="genre">
+          <select
+            name="genre"
+            id="genre"
+            onChange={(e) => setGenre(e.target.value)}
+          >
             <option>Genre</option>
             <option value="adventure">Adventure</option>
             <option value="comedy">Comedy</option>

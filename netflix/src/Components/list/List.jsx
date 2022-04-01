@@ -7,6 +7,7 @@ import { ListItem } from "../../listItem/ListItem";
 import "./list.scss";
 
 export const List = ({ list }) => {
+  //console.log(list);
   const [isMoved, setIsMoved] = useState(false);
   const [sliderNumber, setSliderNumber] = useState(0);
   const listRef = useRef();
@@ -34,9 +35,10 @@ export const List = ({ list }) => {
           style={{ display: !isMoved && "none" }}
         />
         <div className="container" ref={listRef}>
-          {list.content.map((item, i) => {
-            <ListItem index={i} item={item} />;
-          })}
+          {
+            (console.log("asdas"),
+            list.content.map((item, i) => <ListItem index={i} item={item} />))
+          }
         </div>
         <ArrowForwardIosOutlined
           className="sliderArrow  right"
