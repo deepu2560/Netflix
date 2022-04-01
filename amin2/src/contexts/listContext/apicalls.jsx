@@ -50,7 +50,7 @@ export const createMovie = async (movie, dispatch) => {
 export const deleteLists = async (id, dispatch) => {
   dispatch(deleteListStart());
   try {
-    await axios.delete("http://localhost:8080/api/lists" + id, {
+    await axios.delete("http://localhost:8080/api/lists/" + id, {
       headers: {
         token:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDVkY2QyODBhYWIwMDgyOTM0NjJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0ODc5NzkwMCwiZXhwIjoxNjQ5MjI5OTAwfQ.NuKWLkBfr2aYo7ay2SJRXW45rcOodPy_c9HqjSlqHK8",

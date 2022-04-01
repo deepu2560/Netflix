@@ -35,14 +35,15 @@ export default function Home() {
             },
           })
           .then((res) => {
+            console.log("home", res);
             const userData = res.data.sort(function(a, b) {
               return a._id - b._id;
             });
 
-            userData.map((elem) => {
+            userData.map((elem, i) => {
               setuserstats((prev) => [
                 ...prev,
-                { name: MONTHS[elem._id - 1], "New User": elem.total },
+                { name: MONTHS[i], "New User": elem.username },
               ]);
             });
           });
@@ -53,7 +54,7 @@ export default function Home() {
     getStats();
   }, []);
 
-  console.log(userstats);
+  console.log("userStats", userstats);
   return (
     <div className="home">
       <FeaturedInfo />

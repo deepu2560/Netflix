@@ -63,6 +63,7 @@ const ListReducer = (state, action) => {
         error: false,
       };
     case "DELETE_LIST_SUCCESS":
+      //console.log(payload);
       return {
         lists: state.lists.filter((list) => list._id !== action.payload),
         isFetching: false,
