@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 export const ListItem = ({ index, item }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [movie, setMovie] = useState({});
-  console.log("index", item);
+  // console.log("index", item);
 
   useEffect(() => {
     const getMovie = async () => {
