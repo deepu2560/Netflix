@@ -9,12 +9,32 @@ export const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [errmail, setErrmail] = useState(null);
+  const [erruser, setErruser] = useState(null);
   const [nextstep, setNextstep] = useState(false);
 
   const handleStart = () => {
+    if (email === "") {
+      setErrmail("Enter Valid Email");
+      return;
+    }
+    if (!email.includes("@")) {
+      setErrmail("Enter Valid Email");
+      return;
+    }
+    if (!email.includes(".com")) {
+      setErrmail("Enter Valid Email");
+      return;
+    }
+    setErrmail(null);
     setNextstep(true);
   };
   const handleFinish = () => {
+    if (username === "" || password === "") {
+      setErruser("Enter Valid Credentials");
+      return;
+    }
+
     axios
       .post("https://user-netflix.herokuapp.com/api/auth/register", {
         email,
@@ -56,38 +76,46 @@ export const Register = () => {
 
         <span>
           {!nextstep ? (
-            <div className="input">
-              <input
-                type="email"
-                placeholder="email address"
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              />
-              <button className="registerButton" onClick={handleStart}>
-                Get Started
-              </button>
-            </div>
+            <>
+              <div className="input">
+                <input
+                  type="email"
+                  placeholder="email address"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+
+                <button className="registerButton" onClick={handleStart}>
+                  Get Started
+                </button>
+              </div>
+              <p>{errmail}</p>
+            </>
           ) : (
-            <div className="input">
-              <input
-                type="username"
-                placeholder="username"
-                onChange={(e) => {
-                  setUsername(e.target.value);
-                }}
-              />
-              <input
-                type="password"
-                placeholder="password"
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              />
-              <button className="registerButton" onClick={handleFinish}>
-                Start
-              </button>
-            </div>
+            <>
+              <div className="input">
+                <input
+                  value={username}
+                  type="username"
+                  placeholder="username"
+                  onChange={(e) => {
+                    setUsername(e.target.value);
+                  }}
+                />
+                <input
+                  type="password"
+                  placeholder="password"
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                />
+                <button className="registerButton" onClick={handleFinish}>
+                  Start
+                </button>
+              </div>
+              <p>{erruser}</p>
+            </>
           )}
         </span>
       </div>

@@ -28,9 +28,7 @@ function App() {
         <>
           <Route
             path="/movies"
-            element={
-              user ? <Home type="movies" /> : <Navigate to="/register" />
-            }
+            element={user ? <Home type="movie" /> : <Navigate to="/register" />}
           ></Route>
           <Route
             path="/series"

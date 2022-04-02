@@ -38,7 +38,7 @@ export const Login = () => {
           />
           <input
             type="password"
-            placeholder="Email or Phone Number"
+            placeholder="Password"
             onChange={(e) => {
               setPassword(e.target.value);
             }}
