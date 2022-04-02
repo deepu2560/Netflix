@@ -10,11 +10,12 @@ const Featured = ({ type, setGenre }) => {
     const getRandomContent = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8080/api/movies/random?type=${type}`,
+          `https://user-netflix.herokuapp.com/api/movies/random?type=${type}`,
           {
             headers: {
               token:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDVkY2QyODBhYWIwMDgyOTM0NjJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0ODc0NTczNywiZXhwIjoxNjQ5MTc3NzM3fQ._mdvS_JCjzzQpOhyl_Jud2JLTxTgtaCN4X8PoZwG-4Q",
+                "Bearer " +
+                JSON.parse(localStorage.getItem("user")).accessToken,
             },
           }
         );

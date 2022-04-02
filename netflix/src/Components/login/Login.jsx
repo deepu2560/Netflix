@@ -13,16 +13,6 @@ export const Login = () => {
   const handleFinish = (e) => {
     e.preventDefault();
     login({ email, password }, dispatch);
-    // axios
-    //   .post("http://localhost:8080/api/auth/login", {
-    //     email,
-    //     password,
-    //   })
-    //   .then((res) => {
-    //     console.log(res.data);
-    //     navigate("/");
-    //   })
-    //   .catch((err) => console.log("rrr", err));
   };
   return (
     <div className="login">

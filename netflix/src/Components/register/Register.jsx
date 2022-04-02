@@ -16,7 +16,7 @@ export const Register = () => {
   };
   const handleFinish = () => {
     axios
-      .post("https://netflix-backend23.herokuapp.com/api/auth/register", {
+      .post("https://user-netflix.herokuapp.com/api/auth/register", {
         email,
         username,
         password,

@@ -5,7 +5,7 @@ export const login = async (user, dispatch) => {
   dispatch(loginStart());
   try {
     const res = await axios.post(
-      "https://mycrosproxy-forauth.herokuapp.com/https://netflix-backend23.herokuapp.com/api/auth/login",
+      "https://user-netflix.herokuapp.com/user/login",
       user
     );
     dispatch(loginSuccess(res.data));
