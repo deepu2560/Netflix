@@ -1,17 +1,33 @@
+import { SortByAlphaRounded } from "@material-ui/icons";
+import axios from "axios";
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./register.scss";
 
 export const Register = () => {
+  let navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const emailRef = useRef();
-  const passwordRef = useRef();
-
+  const [username, setUsername] = useState("");
+  const [nextstep, setNextstep] = useState(false);
+  const signIn = () => {
+    navigate("/login");
+  };
   const handleStart = () => {
-    setEmail(emailRef.current.value);
+    setNextstep(true);
   };
   const handleFinish = () => {
-    setPassword(passwordRef.current.value);
+    axios
+      .post("http://localhost:8080/api/auth/register", {
+        email,
+        username,
+        password,
+      })
+      .then((res) => {
+        console.log(res.data);
+        navigate("/login");
+      })
+      .catch((err) => console.log(err));
   };
   return (
     <div className="register">
@@ -22,7 +38,9 @@ export const Register = () => {
             alt=""
             className="logo"
           />
-          <button className="loginButton">Sign In</button>
+          <button className="loginButton" onClick={signIn}>
+            Sign In
+          </button>
         </div>
       </div>
 
@@ -34,16 +52,35 @@ export const Register = () => {
         </p>
 
         <span>
-          {!email ? (
+          {!nextstep ? (
             <div className="input">
-              <input type="email" placeholder="email address" ref={emailRef} />
+              <input
+                type="email"
+                placeholder="email address"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
               <button className="registerButton" onClick={handleStart}>
                 Get Started
               </button>
             </div>
           ) : (
             <div className="input">
-              <input type="password" placeholder="password" ref={passwordRef} />
+              <input
+                type="username"
+                placeholder="username"
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                }}
+              />
+              <input
+                type="password"
+                placeholder="password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
               <button className="registerButton" onClick={handleFinish}>
                 Start
               </button>

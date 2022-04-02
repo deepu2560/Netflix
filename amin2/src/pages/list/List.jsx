@@ -2,10 +2,10 @@ import { Link, useLocation } from "react-router-dom";
 import "./list.css";
 import { Publish } from "@material-ui/icons";
 
-export default function List() {
+export default function List({ movie }) {
   const location = useLocation();
-  console.log(location);
-  const list = location.list;
+  console.log("lovation", movie);
+  //const list = location.list;
   return (
     <div className="product">
       <div className="productTitleContainer">

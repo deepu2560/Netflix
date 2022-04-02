@@ -1,11 +1,28 @@
+import axios from "axios";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./login.scss";
+import { login } from "../../authContext/apiCalls";
+import { AuthContext } from "../../authContext/AuthContext";
 
 export const Login = () => {
-  const handleStart = () => {
-    setEmail(emailRef.current.value);
-  };
-  const handleFinish = () => {
-    setPassword(passwordRef.current.value);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  let navigate = useNavigate();
+  const { dispatch } = useContext(AuthContext);
+  const handleFinish = (e) => {
+    e.preventDefault();
+    login({ email, password }, dispatch);
+    axios
+      .post("http://localhost:8080/api/auth/login", {
+        email,
+        password,
+      })
+      .then((res) => {
+        console.log(res.data);
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
   };
   return (
     <div className="login">
@@ -20,11 +37,29 @@ export const Login = () => {
       </div>
 
       <div className="container">
-        <form>
+        <form onSubmit={handleFinish}>
           <h1>Sign In</h1>
-          <input type="email" placeholder="Email or Phone Number" />
-          <input type="email" placeholder="Email or Phone Number" />
-          <button className="loginButton">Sign In</button>
+          <input
+            type="email"
+            placeholder="Email or Phone Number"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          <input
+            type="password"
+            placeholder="Email or Phone Number"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+          <input
+            className="loginButton"
+            type="submit"
+            name="Sign In "
+            placeholder="Sign In"
+          />
+
           <span>
             New to Netflix? <b>Sign Up Now.</b>
           </span>
