@@ -10,9 +10,7 @@ export const Register = () => {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [nextstep, setNextstep] = useState(false);
-  const signIn = () => {
-    navigate("/login");
-  };
+
   const handleStart = () => {
     setNextstep(true);
   };
@@ -38,7 +36,12 @@ export const Register = () => {
             alt=""
             className="logo"
           />
-          <button className="loginButton" onClick={signIn}>
+          <button
+            className="loginButton"
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
             Sign In
           </button>
         </div>

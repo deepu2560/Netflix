@@ -22,7 +22,7 @@
       }
 
       .loginButton {
-        background-color: red;
+        background-color: rgb(245, 22, 22);
         border: none;
         color: white;
         border-radius: 5px;
@@ -30,6 +30,8 @@
         font-size: 16px;
         font-weight: 500;
         cursor: pointer;
+        pointer-events: all;
+        z-index: 85;
       }
     }
   }
