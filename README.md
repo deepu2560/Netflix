@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Deepu2560/Netflix">
-    <img src="https://github.com/anubis-x-ranger/projectScreenshots/blob/main/IMG_20220403_202708.jpg" alt="Logo" width="120" height="60">
+    <img src="https://github.com/anubis-x-ranger/projectScreenshots/blob/main/netfliximg.jpg" alt="Logo" width="120" height="60">
   </a>
 
 <h3 align="center">NetFlix Website(Clone)</h3>
@@ -32,7 +32,6 @@
       </ul>
     </li>
     <li><a href="#usage-and-features">Usage & Features </a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributors">Contributors</a></li>
     <li><a href="#team-members">Team Members</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -46,7 +45,7 @@
 ## About The Project
 
 This is a Team Project made in 5 days by 5 Team Members.
-We tried to clone the Netflix OTT website.With all the Concepts we learned in Masai School till Unit-5.Checkout the preview of our Sony Website Clone and find the Source Code in the Main Branch.
+We tried to clone the Netflix OTT website.With all the Concepts we learned in Masai School till Unit-5.Checkout our Netflix Website Clone by clicking on the link below and find the Source Code in the Main Branch.
 <a href="https://netflix-lake-two.vercel.app/">
   <img src="https://github.com/anubis-x-ranger/projectScreenshots/blob/main/IMG_20220403_202708.jpg" alt="Logo" width="1000" >
 </a>
@@ -99,7 +98,7 @@ Make sure you have Node JS on your machine .Use the following NPM Package to get
 <!-- USAGE EXAMPLES -->
 
 ## Usage and Features
-
+You can watch movie trailers of different genres. You have a wide variety to choose from so please try the trailers.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -114,7 +113,7 @@ Our first website as a team project is finally completed. It was started one wee
 
 1. Deepanshu Gulia
 2. Palleti Mohan babu
-3. Shubham 
+3. Shubham Kumar
 4. Satyajit Sahu
 5. Satyanaryan Patra
 
@@ -128,7 +127,7 @@ This project would not have been possible without…
 
 - Masai School's -Instructors
 - Prabhanjan Padhye
-- Dhaval 
-- Our IA Deevanshu
+- Dhaval Chheda
+- Our IA Deevanshu Kumawat
 
 <p align="right">(<a href="#top">back to top</a>)</p>
