@@ -1,0 +1,134 @@
+@import "../../app.scss";
+.navbar {
+  width: 100%;
+
+  color: white;
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.3) 50%);
+  .small_logo {
+    height: 25px;
+    margin-right: 40px;
+    display: none;
+    @include tablet{
+      display: none;
+    }
+    @include mobile{
+      display: block;
+      margin: auto;
+      margin-top: 20px;
+    }
+  }
+
+  &.scrolled {
+    background-color: var(--main-color);
+    
+  }
+
+  .container {
+    padding: 0px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    @include mobile{
+      width: 80vw;
+      padding: 0px;
+      margin-left: 3vw;
+    }
+    .left {
+      display: flex;
+      align-items: center;
+      img {
+        height: 25px;
+        margin-right: 40px;
+        @include mobile{
+          display: none;
+        }
+      }
+      span {
+        margin-right: 20px;
+        cursor: pointer;
+        @include tablet{
+          display: none;
+        }
+        &.mainLink{
+          @include tablet{
+            display: block;
+          }
+        }
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      .searchdiv{
+        position: absolute;
+        // border: 1px solid red;
+        // height: 300px;
+        top: 75px; right: 100px;
+        @include tablet{
+          top: 50px;
+         }
+        @include mobile{
+         top: 90px;
+        }
+        
+        a{
+          color: white;
+        }
+        .search_input{
+          // position: absolute;
+          // margin-top: 60px;
+          margin: 5px;
+          
+        }
+        .searchBox{
+          // position: relative;
+          // margin-top: 26vh;
+          // width: 100%;
+          color: rgb(255, 255, 255);
+          overflow: hidden;
+          margin: 5px;
+          height: 300px;
+          
+          background-color: rgb(0, 0, 0);
+  
+        }
+      }
+     
+      .icon {
+        margin: 0px 15px;
+        cursor: pointer;
+      }
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        object-fit: cover;
+        cursor: pointer;
+      }
+      .profile {
+        .options {
+          display: none;
+          background-color: var(--main-color);
+          border-radius: 5px;
+        }
+        span {
+          padding: 10px;
+          cursor: pointer;
+        }
+
+        &:hover {
+          .options {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+          }
+        }
+      }
+    }
+  }
+}
