@@ -1,3 +1,4 @@
+@import "../../app.scss";
 .register {
   background-image: linear-gradient(
       to bottom,
@@ -49,12 +50,23 @@
 
     h1 {
       font-size: 50px;
+      @include mobile{
+       font-size: 30px;
+        text-align: center;
+      }
     }
     h2 {
       margin: 5px;
+      @include mobile{
+        text-align: center;
+      }
     }
     p {
       font-size: 20px;
+      @include mobile{
+        font-size: 15px;
+        text-align: center;
+       }
     }
     span {
       width: 40%;
@@ -68,12 +80,19 @@
       margin-top: 20px;
       height: 50px;
       border-radius: 5px;
+      @include mobile{
+        display: block;
+        background-color: transparent;
+      }
 
       input {
         flex: 11;
         height: 100%;
         border: none;
-        padding: 0 10%;
+        padding: 0 10%; 
+        @include mobile{
+          margin: 3px;
+        }
       }
 
       .registerButton {
@@ -86,6 +105,9 @@
         // font-size: 20px;
         padding: 0vh 5vh;
         cursor: pointer;
+        @include mobile{
+          margin: 30px;
+        }
       }
     }
   }

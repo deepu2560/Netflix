@@ -1,3 +1,4 @@
+@import "../../app.scss";
 .login {
   background-image: linear-gradient(
       to bottom,
@@ -43,6 +44,9 @@
       background-color: var(--main-color);
       flex-direction: column;
       justify-content: space-around;
+      @include mobile{
+        width: 70vw;
+      }
 
       h1 {
         margin: 0px;
