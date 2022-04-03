@@ -11,7 +11,7 @@ export const login = async (user, dispatch) => {
     dispatch(loginSuccess(res.data));
   } catch (err) {
     console.log("erroe", err);
-    dispatch(loginFailure());
     alert("Enter Correct Credentials");
+    dispatch(loginFailure());
   }
 };
