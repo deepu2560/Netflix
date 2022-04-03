@@ -40,7 +40,7 @@ export const Register = () => {
     }
 
     axios
-      .post("https://netflix-n.herokuapp.com/api/auth/register", {
+      .post("https://netflix-n.herokuapp.com/user/register", {
         email,
         username,
         password,

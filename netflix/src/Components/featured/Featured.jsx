@@ -53,10 +53,12 @@ const Featured = ({ type, setGenre }) => {
           </select>
         </div>
       )}
-      <img src={content.img} width={"100%"} alt="movie image" />
+      <img src={content.img} width={"80%"} alt="movie image" />
       <div className="info">
         <img src={content.imgTitle} alt="Movie Image" />
-        <h1 className="desc">{content.title}</h1>
+        <h1 className="desc" style={{ margin: "0px" }}>
+          {content.title}
+        </h1>
         <span className="desc">{content.description}</span>
         <div className="buttons">
           <Link

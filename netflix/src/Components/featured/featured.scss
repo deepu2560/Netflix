@@ -1,3 +1,4 @@
+@import "../../app.scss";
 .featured {
   height: 90vh;
   position: relative;
@@ -34,13 +35,23 @@
     color: white;
     display: flex;
     flex-direction: column;
-    text-shadow:  1px 1px 1px rgb(15, 15, 15);;
+    text-shadow:  1px 1px 1px rgb(15, 15, 15);
+    @include mobile{
+      left: 30px;
+    }
 
     img {
       width: 400px;
+      @include mobile{
+        display: block;
+        width: 80vw;
+      }
     }
     .desc {
       margin: 20px 0px;
+      @include tablet{
+        width: 80vw;
+      }
     }
     .buttons {
       display: flex;

@@ -25,7 +25,7 @@ const Home = ({ type }) => {
             },
           }
         );
-        // console.log("home page");
+        console.log(res.data);
         setLists(res.data);
       } catch (err) {
         //console.log("backend", err);
