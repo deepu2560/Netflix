@@ -1,6 +1,7 @@
 import { InfoOutlined, PlayArrow } from "@material-ui/icons";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./featured.scss";
 
 const Featured = ({ type, setGenre }) => {
@@ -20,6 +21,7 @@ const Featured = ({ type, setGenre }) => {
           }
         );
         setContent(res.data[0]);
+        console.log(content);
       } catch (err) {
         console.log(err);
       }
@@ -51,15 +53,25 @@ const Featured = ({ type, setGenre }) => {
           </select>
         </div>
       )}
-      <img src={content.img} width={"100%"} alt="movie" />
+      <img src={content.img} width={"100%"} alt="movie image" />
       <div className="info">
-        <img src={content.imgTitle} alt="" />
-        <span className="desc">{content.desc}</span>
+        <img src={content.imgTitle} alt="Movie Image" />
+        <span className="desc">{content.description}</span>
         <div className="buttons">
-          <button className="play">
-            <PlayArrow />
-            <span>Play</span>
-          </button>
+          <Link
+            to={{
+              pathname: "/watch",
+              search: "",
+              hash: content.trailer,
+              state: { fromDashboard: true },
+            }}
+          >
+            <button className="play">
+              <PlayArrow />
+              <span>Play</span>
+            </button>
+          </Link>
+
           <button className="more">
             <InfoOutlined />
             <span>Info</span>

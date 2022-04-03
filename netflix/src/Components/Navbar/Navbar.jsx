@@ -31,12 +31,13 @@ const Navbar = () => {
             <span>Series</span>
           </Link>
 
-          <span>HomePage</span>
-          <span>HomePage</span>
-          <span>HomePage</span>
+          <span>New and Popular </span>
+          <span>My List</span>
         </div>
         <div className="right">
           <Search className="icon" />
+          <input type="search" className="search_term" />
+          <div className="seacrhBox"></div>
           <span>Kid</span>
           <Notifications className="icon" />
           <img

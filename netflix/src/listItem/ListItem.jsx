@@ -36,8 +36,6 @@ export const ListItem = ({ index, item }) => {
     getMovie();
   }, [item, index]);
 
-  const trailer =
-    "https://player.vimeo.com/video/253989945?h=c6db007fe5&color=ef0800&title=0&byline=0&portrait=0";
   return (
     <Link
       to={{
@@ -69,7 +67,7 @@ export const ListItem = ({ index, item }) => {
                 <span className="limit">+{movie.limit}</span>
                 <span>{movie.year}</span>
               </div>
-              <div className="desc">{movie.desc}</div>
+              <div className="desc">{movie.description}</div>
               <div className="genre">{movie.genre}</div>
             </div>
           </>
