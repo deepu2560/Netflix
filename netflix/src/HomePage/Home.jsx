@@ -14,7 +14,7 @@ const Home = ({ type }) => {
     const get_list = async () => {
       try {
         const res = await axios.get(
-          `https://user-netflix.herokuapp.com/api/lists${
+          `https://netflix-n.herokuapp.com/api/lists${
             type ? "?type=" + type : ""
           }${genre ? "&genre=" + genre : ""}`,
           {

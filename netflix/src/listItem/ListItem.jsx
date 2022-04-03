@@ -18,7 +18,7 @@ export const ListItem = ({ index, item }) => {
     const getMovie = async () => {
       try {
         const res = await axios.get(
-          "https://user-netflix.herokuapp.com/api/movies/find/" + item,
+          "https://netflix-n.herokuapp.com/api/movies/find/" + item,
           {
             headers: {
               token:

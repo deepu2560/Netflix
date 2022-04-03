@@ -8,10 +8,25 @@ import { AuthContext } from "../../authContext/AuthContext";
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errmail, setErrmail] = useState(null);
+  const [errpassword, setErrpassword] = useState(null);
   let navigate = useNavigate();
   const { dispatch } = useContext(AuthContext);
   const handleFinish = (e) => {
     e.preventDefault();
+    if (!email.includes("@")) {
+      setErrmail("Enter Valid Email");
+      return;
+    }
+    if (!email.includes(".com")) {
+      setErrmail("Enter Valid Email");
+      return;
+    }
+    if (email === "" || password === "") {
+      setErrmail("Enter Valid Credentials");
+      return;
+    }
+
     login({ email, password }, dispatch);
   };
   return (
@@ -49,7 +64,7 @@ export const Login = () => {
             name="Sign In "
             placeholder="Sign In"
           />
-
+          <p style={{ color: "red", margin: "0px" }}>{errmail}</p>
           <span>
             New to Netflix? <b>Sign Up Now.</b>
           </span>

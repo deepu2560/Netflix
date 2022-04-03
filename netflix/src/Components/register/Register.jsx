@@ -34,9 +34,13 @@ export const Register = () => {
       setErruser("Enter Valid Credentials");
       return;
     }
+    if (password.length < 5) {
+      setErrmail("");
+      return;
+    }
 
     axios
-      .post("https://user-netflix.herokuapp.com/api/auth/register", {
+      .post("https://netflix-n.herokuapp.com/api/auth/register", {
         email,
         username,
         password,
