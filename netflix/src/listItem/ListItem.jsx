@@ -28,7 +28,7 @@ export const ListItem = ({ index, item }) => {
           }
         );
         //console.log(res.data);
-        setMovie(res.data);
+        res.data ? setMovie(res.data) : "";
       } catch (err) {
         console.log("listItam failed", err);
       }

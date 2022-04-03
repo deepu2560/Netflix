@@ -15,13 +15,13 @@ export const Login = () => {
   const handleFinish = (e) => {
     e.preventDefault();
     if (!email.includes("@")) {
-      setErrmail("Enter Valid Email");
+      setErrmail("Enter Valid Credentials");
       return;
     }
-    if (!email.includes(".com")) {
-      setErrmail("Enter Valid Email");
-      return;
-    }
+    // if (!email.includes(".com")) {
+    //   setErrmail("Enter  Valid Credentials");
+    //   return;
+    // }
     if (email === "" || password === "") {
       setErrmail("Enter Valid Credentials");
       return;
@@ -64,7 +64,10 @@ export const Login = () => {
             name="Sign In "
             placeholder="Sign In"
           />
-          <p style={{ color: "red", margin: "0px" }}>{errmail}</p>
+          <p style={{ color: "red", margin: "0px" }}>
+            {" "}
+            <b> {errmail}</b>{" "}
+          </p>
           <span>
             New to Netflix? <b>Sign Up Now.</b>
           </span>

@@ -7,7 +7,7 @@ import { ListItem } from "../../listItem/ListItem";
 import "./list.scss";
 
 export const List = ({ list }) => {
-  //console.log(list);
+  console.log(list);
   const [isMoved, setIsMoved] = useState(false);
   const [sliderNumber, setSliderNumber] = useState(0);
   const listRef = useRef();

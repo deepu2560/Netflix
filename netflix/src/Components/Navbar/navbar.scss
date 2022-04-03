@@ -33,6 +33,30 @@
     .right {
       display: flex;
       align-items: center;
+      .searchdiv{
+        position: absolute;
+        // border: 1px solid red;
+        // height: 300px;
+        top: 55px; right: 100px;
+        .search_input{
+          // position: absolute;
+          // margin-top: 60px;
+          margin: 5px;
+        }
+        .searchBox{
+          // position: relative;
+          // margin-top: 26vh;
+          // width: 100%;
+          color: black;
+          overflow: scroll;
+          margin: 5px;
+          height: 200px;
+          
+          background-color: whitesmoke;
+  
+        }
+      }
+     
       .icon {
         margin: 0px 15px;
         cursor: pointer;

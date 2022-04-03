@@ -12,5 +12,6 @@ export const login = async (user, dispatch) => {
   } catch (err) {
     console.log("erroe", err);
     dispatch(loginFailure());
+    alert("Enter Correct Credentials");
   }
 };
