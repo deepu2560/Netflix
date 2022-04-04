@@ -11,7 +11,7 @@ const Featured = ({ type, setGenre }) => {
     const getRandomContent = async () => {
       try {
         const res = await axios.get(
-          `https://netflix-n.herokuapp.com/api/movies/random?type=${type}`,
+          `https://netflix-k.herokuapp.com/api/movies/random?type=${type}`,
           {
             headers: {
               token:
