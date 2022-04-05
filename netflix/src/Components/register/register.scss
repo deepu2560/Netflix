@@ -82,7 +82,7 @@
       height: 50px;
       border-radius: 5px;
       @include mobile{
-        display: block;
+        
         background-color: transparent;
       }
 
@@ -107,7 +107,7 @@
         padding: 0vh 5vh;
         cursor: pointer;
         @include mobile{
-          margin: 30px;
+          
         }
       }
     }
