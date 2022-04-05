@@ -185,6 +185,12 @@
           }
         }
       }
+      .section-animation-3 {
+        top: 8%;
+        width: 60%;
+        position: absolute;
+        left: 18%;
+    }
       
     }
   }
@@ -195,3 +201,34 @@
     flex-flow: row-reverse;
   }
 }
+.footer {
+  color: #757575;
+  background-color: black;
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 3em 0;
+    .footer-container {
+      padding: 0;
+      margin: 0;
+      margin-top: 1em;
+      .footer-link-item {
+        
+          display: inline-block;
+          width: 20%;
+          padding-left: 1em;
+          list-style: none;
+          text-align: left;
+          @include tablet{
+            width: 35%;
+          }
+      }
+        a{
+          text-decoration: none;
+          color: #757575;
+          font-size: 0.8rem;
+        }
+      }
+    }
+}
+

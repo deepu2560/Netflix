@@ -7,6 +7,8 @@ import pic from "./tv-new.png";
 import icon from "./download-icon.gif";
 import joker2 from "./joker-poster-2.jpg";
 import mobile from "./mobile.png";
+import devices from "./devices-new.png";
+import video_joker from "./joker-intro.mp4";
 
 export const Register = () => {
   let navigate = useNavigate();
@@ -130,7 +132,7 @@ export const Register = () => {
           </span>
         </div>
 
-        {/* section-2 */}
+        {/* section-1*/}
       </div>
       <div className="section section1">
         <div className="container">
@@ -176,6 +178,113 @@ export const Register = () => {
           </div>
         </div>
       </div>
+      {/* section --3*/}
+      <div className="section section3">
+        <div className="container">
+          <div className="section__text">
+            <h1 className="section__text--title">Watch everywhere.</h1>
+            <h2 className="section__text--subtitle">
+              Stream unlimited movies and TV shows on your phone, tablet,
+              laptop, and TV.
+            </h2>
+          </div>
+          <div className="section__content">
+            <div className="section-animation-container">
+              <img className="section-animation-image" src={devices} alt="" />
+              <video
+                className="section-animation-3"
+                autoPlay
+                playsInline
+                muted
+                loop
+              >
+                <source src={video_joker} type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* footer -----------------------------------------*/}
+      <footer className="footer">
+        <div className="container">
+          <div className="footer__text">
+            <p>Questions? Call 000-800-000-0007</p>
+          </div>
+          <ul className="footer-container">
+            <li className="footer-link-item">
+              <a className="footer-link" href="">
+                FAQ
+              </a>
+            </li>
+            <li className="footer-link-item">
+              <a className="footer-link" href="">
+                Account
+              </a>
+            </li>
+            <li className="footer-link-item">
+              <a className="footer-link" href="">
+                Investor Relations
+              </a>
+            </li>
+            <li className="footer-link-item">
+              <a className="footer-link" href="">
+                Ways to Watch
+              </a>
+            </li>
+            <li className="footer-link-item">
+              <a className="footer-link" href="">
+                Privacy
+              </a>
+            </li>
+            <li className="footer-link-item">
+              <a className="footer-link" href="">
+                Corporate Information
+              </a>
+            </li>
+            <li className="footer-link-item">
+              <a className="footer-link" href="">
+                Speed Test
+              </a>
+            </li>
+            <li className="footer-link-item">
+              <a className="footer-link" href="">
+                Tenflix Originals
+              </a>
+            </li>
+            <li className="footer-link-item">
+              <a className="footer-link" href="">
+                Help Center
+              </a>
+            </li>
+            <li className="footer-link-item">
+              <a className="footer-link" href="">
+                Media Center
+              </a>
+            </li>
+            <li className="footer-link-item">
+              <a className="footer-link" href="">
+                Jobs
+              </a>
+            </li>
+            <li className="footer-link-item">
+              <a className="footer-link" href="">
+                Terms of Use
+              </a>
+            </li>
+            <li className="footer-link-item">
+              <a className="footer-link" href="">
+                Cookie Preferences
+              </a>
+            </li>
+            <li className="footer-link-item">
+              <a className="footer-link" href="">
+                Contact Us
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
     </>
   );
 };
