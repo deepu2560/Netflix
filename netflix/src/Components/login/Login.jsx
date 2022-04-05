@@ -63,6 +63,11 @@ export const Login = () => {
             type="submit"
             name="Sign In "
             placeholder="Sign In"
+            style={{
+              backgroundColor: "red",
+              cursor: "pointer",
+              border: "none",
+            }}
           />
           <p style={{ color: "red", margin: "0px" }}>
             {" "}

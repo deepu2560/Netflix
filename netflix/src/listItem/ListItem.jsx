@@ -54,7 +54,7 @@ export const ListItem = ({ index, item }) => {
         <img src={movie?.imgTitle} alt="" />
         {isHovered && (
           <>
-            <video src={movie.trailer} autoPlay={true} loop />
+            <video src={movie.trailer} autoPlay={true} muted />
             <div className="itemInfo">
               <div className="icons">
                 <PlayArrow className="icon" />
@@ -62,13 +62,21 @@ export const ListItem = ({ index, item }) => {
                 <ThumbUpAltOutlined className="icon" />
                 <ThumbDownOutlined className="icon" />
               </div>
-              <div className="itemInfoTop">
+              <div
+                className="itemInfoTop"
+                style={{ padding: "5px", margin: "0px" }}
+              >
                 <span>{movie.duration}</span>
-                <span className="limit">+{movie.limit}</span>
-                <span>{movie.year}</span>
+                <span>{movie.title}</span> <br />
+                <span>{movie.year}</span>{" "}
+                <span className="genre">{"  " + movie.genre}</span>
               </div>
-              <div className="desc">{movie.description}</div>
-              <div className="genre">{movie.genre}</div>
+              <div
+                className="desc"
+                style={{ padding: "5px", margin: "0px", fontSize: "smaller" }}
+              >
+                {movie.description}
+              </div>
             </div>
           </>
         )}
