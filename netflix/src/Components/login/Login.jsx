@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./login.scss";
 import { login } from "../../authContext/apiCalls";
 import { AuthContext } from "../../authContext/AuthContext";
@@ -69,7 +69,11 @@ export const Login = () => {
             <b> {errmail}</b>{" "}
           </p>
           <span>
-            New to Netflix? <b>Sign Up Now.</b>
+            New to Netflix?{" "}
+            <b>
+              {" "}
+              <Link to="/register"> Sign Up Now. </Link>{" "}
+            </b>
           </span>
           <small>
             This page is protected by Google reCAPTCHA to ensure you're not a

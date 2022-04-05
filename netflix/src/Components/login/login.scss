@@ -11,6 +11,8 @@
   overflow: hidden;
   position: relative;
 
+  
+
   .top {
     .wrapper {
       padding: 20px 50px;
@@ -47,6 +49,14 @@
       @include mobile{
         width: 70vw;
       }
+      a{
+        text-decoration: none;
+        color: white;
+        &:hover{
+          color: white;
+        }
+      }
+
 
       h1 {
         margin: 0px;
