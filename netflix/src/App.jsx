@@ -39,6 +39,7 @@ function App() {
           <Route path="/watch" element={<Watch />}></Route>
         </>
       }
+      <Route path="*" element={<Register />} />
     </Routes>
   );
 }

@@ -2,12 +2,12 @@
 .register {
   background-image: linear-gradient(
       to bottom,
-      rgb(0, 0, 0, 0) 0%,
+      rgb(0, 0, 0, 0) 1%,
       rgb(0, 0, 0, 1) 100%
     ),
     url("https://assets.nflxext.com/ffe/siteui/vlv3/0bd3a69d-6790-4edc-9818-1c8c558946c2/e1a8a32a-a07a-4bae-965a-9b218881763e/IN-en-20220329-popsignuptwoweeks-perspective_alpha_website_large.jpg");
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 75vh;
   overflow: hidden;
   position: relative;
   
@@ -46,7 +46,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    top: 0;
+    //    
     left: 0;
 
     h1 {
@@ -121,7 +121,7 @@
   .container {
     width: 70%;
     margin: 0 auto;
-    padding: 3em 0;
+    padding: 1em 0;
     display: flex;
     @include mobile{
       display: block;
