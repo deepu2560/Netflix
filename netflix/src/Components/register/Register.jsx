@@ -89,7 +89,7 @@ export const Register = () => {
           <span>
             {!nextstep ? (
               <>
-                <div className="input">
+                <div className="input1">
                   <input
                     type="email"
                     placeholder="email address"
@@ -126,7 +126,7 @@ export const Register = () => {
                     Start
                   </button>
                 </div>
-                <p>{erruser}</p>
+                <p style={{ position: "absolute", zIndex: "65" }}>{erruser}</p>
               </>
             )}
           </span>
