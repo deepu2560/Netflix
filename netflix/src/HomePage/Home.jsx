@@ -25,7 +25,7 @@ const Home = ({ type }) => {
             },
           }
         );
-        console.log(res.data);
+        // console.log(res.data);
         setLists(res.data);
       } catch (err) {
         //console.log("backend", err);
@@ -38,10 +38,10 @@ const Home = ({ type }) => {
     <div className="home">
       <Navbar />
 
-      <Featured type={type} setGenre={setGenre} />
-      {lists.map((list) => {
+      <Featured type={type} lists={lists} setGenre={setGenre} />
+      {lists.map((list, i) => {
         //console.log("appedning");
-        return <List list={list} />;
+        return <List list={list} key={i} />;
       })}
     </div>
   );

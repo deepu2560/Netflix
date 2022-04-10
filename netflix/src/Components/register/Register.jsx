@@ -46,16 +46,18 @@ export const Register = () => {
     }
 
     axios
+      //.post("https://netflix-k.herokuapp.com/user/register", {
       .post("https://netflix-k.herokuapp.com/user/register", {
         email,
         username,
         password,
       })
       .then((res) => {
+        // console.log(res);
         console.log(res.data);
-        navigate("/login");
+        // navigate("/login");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log("asas", err));
   };
   return (
     <>

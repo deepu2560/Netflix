@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./featured.scss";
 
-const Featured = ({ type, setGenre }) => {
+const Featured = ({ type, setGenre, lists }) => {
   const [content, setContent] = useState({});
 
   useEffect(() => {
