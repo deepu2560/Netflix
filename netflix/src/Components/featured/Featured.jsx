@@ -6,28 +6,32 @@ import "./featured.scss";
 
 const Featured = ({ type, setGenre, lists }) => {
   const [content, setContent] = useState({});
+  // console.log(JSON.parse(localStorage.getItem("user")));
+  setTimeout(
+    useEffect(() => {
+      const getRandomContent = async () => {
+        try {
+          const res = await axios.get(
+            `https://netflix-k.herokuapp.com/api/movies/random?type=${type}`,
+            {
+              headers: {
+                token:
+                  "Bearer " +
+                  JSON.parse(localStorage.getItem("user")).accessToken,
+              },
+            }
+          );
+          setContent(res.data[0]);
+          //console.log(content);
+        } catch (err) {
+          console.log(err);
+        }
+      };
+      getRandomContent();
+    }, [type]),
+    500
+  );
 
-  useEffect(() => {
-    const getRandomContent = async () => {
-      try {
-        const res = await axios.get(
-          `https://netflix-k.herokuapp.com/api/movies/random?type=${type}`,
-          {
-            headers: {
-              token:
-                "Bearer " +
-                JSON.parse(localStorage.getItem("user")).accessToken,
-            },
-          }
-        );
-        setContent(res.data[0]);
-        console.log(content);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getRandomContent();
-  }, [type]);
   return (
     <div className="featured">
       {type && (

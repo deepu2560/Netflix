@@ -11,10 +11,11 @@ export const login = async (user, dispatch) => {
     );
     console.log(res);
     if (res.data.status) {
-      alert("enter correct details");
+      return alert("enter correct details");
     } else {
-      dispatch(loginSuccess(res.data));
     }
+    localStorage.setItem("user", JSON.stringify(res.data));
+    dispatch(loginSuccess(res.data));
   } catch (err) {
     console.log("erroe", err);
     alert("Enter Correct Credentials");
