@@ -30,7 +30,7 @@ const Navbar = () => {
   const updateDebounce = debounce((e) => {
     setSearchresultbox(true);
     axios
-      .get(`https://netflix-n.herokuapp.com/api/movies/search?s=${e}`, {
+      .get(`https://netflix-k.herokuapp.com/api/movies/search?s=${e}`, {
         headers: {
           token:
             "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
