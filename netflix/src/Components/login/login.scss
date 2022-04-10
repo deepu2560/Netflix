@@ -72,9 +72,10 @@
         padding-left: 10px;
 
         &::placeholder {
-          color: lightgray;
+          color: rgb(255, 255, 255);
         }
       }
+      
       button {
         height: 40px;
         border-radius: 5px;

@@ -6,40 +6,33 @@ import { useContext } from "react";
 import Home from "./HomePage/Home";
 import Watch from "./Watch/Watch";
 import { AuthContext } from "./authContext/AuthContext";
+import NotFound from "./404/NotFound";
 
 function App() {
   let { user } = useContext(AuthContext);
   return (
     <Routes>
-      <Route
-        exact
-        path="/"
-        element={user ? <Home /> : <Navigate to="/register" />}
-      ></Route>
+      <Route path="/" exact element={user ? <Home /> : <Register />}></Route>
       <Route
         path="/register"
-        element={!user ? <Register /> : <Navigate to="/" />}
+        exact
+        element={!user ? <Register /> : <Home />}
+      ></Route>
+      <Route path="/login" exact element={!user ? <Login /> : <Home />}></Route>
+
+      <Route
+        path="/movies"
+        exact
+        element={user ? <Home type="movie" /> : <Register />}
       ></Route>
       <Route
-        path="/login"
-        element={!user ? <Login /> : <Navigate to="/" />}
+        path="/series"
+        exact
+        element={user ? <Home type="series" /> : <Register />}
       ></Route>
-      {
-        <>
-          <Route
-            path="/movies"
-            element={user ? <Home type="movie" /> : <Navigate to="/register" />}
-          ></Route>
-          <Route
-            path="/series"
-            element={
-              user ? <Home type="series" /> : <Navigate to="/register" />
-            }
-          ></Route>
-          <Route path="/watch" element={<Watch />}></Route>
-        </>
-      }
-      <Route path="*" element={<Register />} />
+      <Route path="/watch" exact element={<Watch />}></Route>
+
+      <Route path="*" exact element={<NotFound />} />
     </Routes>
   );
 }
