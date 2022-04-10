@@ -140,7 +140,7 @@ const Navbar = () => {
               ""
             )}
           </div>
-          <span>Kid</span>
+          <span>Hi,{JSON.parse(localStorage.getItem("user")).username}</span>
           <Notifications className="icon" />
           <img
             src="https://raisingchildren.net.au/__data/assets/image/0024/47742/baby-behaviour-and-awareness.jpg"
