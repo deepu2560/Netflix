@@ -80,8 +80,9 @@ export const Register = () => {
 
         <div className="container">
           <h1>Unlimited Movies , TV shows and more</h1>
-          <h2>Watch anywhere . cancel anytime</h2>
+
           <p>
+            Watch anywhere . cancel anytime <br />
             Ready to watch? Enter your email to create or restart your
             membership
           </p>
@@ -125,8 +126,9 @@ export const Register = () => {
                   <button className="registerButton" onClick={handleFinish}>
                     Start
                   </button>
+                  <p id="errSmall">{erruser}</p>
                 </div>
-                <p style={{ position: "absolute", zIndex: "65" }}>{erruser}</p>
+                <p id="errLarger">{erruser}</p>
               </>
             )}
           </span>
