@@ -54,8 +54,11 @@ export const Register = () => {
       })
       .then((res) => {
         // console.log(res);
-        console.log(res.data);
-        // navigate("/login");
+        //console.log(res.data);
+        if (res.data.status) {
+          return alert("Enter correct Details");
+        }
+        navigate("/login");
       })
       .catch((err) => console.log("asas", err));
   };
