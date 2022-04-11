@@ -107,7 +107,7 @@ export default function NewMovie() {
           <input
             type="text"
             placeholder="description"
-            name="desc"
+            name="description"
             onChange={handleChange}
           />
         </div>

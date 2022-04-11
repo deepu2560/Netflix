@@ -1,1 +1,2 @@
 web: node index.js
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDU0OWNiNmFhYjRkOWM4NjdhMjYxNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0ODcwODQyMCwiZXhwIjoxNjQ5MTQwNDIwfQ.UDVWunPecEkQ3najfVFyntUKuTjmuK7PLdXjevbEPbQ
