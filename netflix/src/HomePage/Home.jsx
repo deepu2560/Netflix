@@ -6,7 +6,6 @@ import { List } from "../Components/list/List";
 import { useEffect, useState } from "react";
 import axios from "axios";
 const Home = ({ type }) => {
-  //console.log(type);
   const [lists, setLists] = useState([]);
   const [genre, setGenre] = useState(null);
 
@@ -25,7 +24,6 @@ const Home = ({ type }) => {
             },
           }
         );
-        // console.log(res.data);
         setLists(res.data);
       } catch (err) {
         //console.log("backend", err);
