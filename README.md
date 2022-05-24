@@ -46,7 +46,7 @@
 
 This is a Team Project made in 5 days by 5 Team Members.
 We tried to clone the Netflix OTT website.With all the Concepts we learned in Masai School till Unit-5.Checkout our Netflix Website Clone by clicking on the link below and find the Source Code in the Main Branch.
-<a href="https://netflix-lake-two.vercel.app/">
+<a href="https://netflix-clone-eight-psi.vercel.app/">
 <img src="https://github.com/anubis-x-ranger/projectScreenshots/blob/main/IMG_20220403_202708.jpg" alt="Logo" width="1000" >
 </a>
 
